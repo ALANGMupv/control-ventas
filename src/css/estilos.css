@@ -97,3 +97,7 @@ main {
    display: block; /* ocupe todo el espacio disponible */
     text-align: center;
 }
+
+h1 {
+    color: red;
+}
