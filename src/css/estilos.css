@@ -55,6 +55,9 @@ body {
 body > header {
     padding: .5rem;
     height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .panel {
@@ -98,6 +101,23 @@ main {
     text-align: center;
 }
 
+.nota {
+    border: solid 1px #ccc;
+    margin: 1em;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+.nota .fecha {
+    font-size: 80%;
+    font-style: italic;
+    opacity: .8;
+}
+
+.contenedor {
+    max-width: 80ch; /* ch, anchura de una letra */
+    margin: 0 auto; /* queda centrado */
+}
 h1 {
     color: red;
 }
