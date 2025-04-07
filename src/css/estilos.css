@@ -1,35 +1,16 @@
 /* region --- RESET --- */
-* {
-    margin: 0;
-    padding: 0;
-}
+* { margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; }
 
-*, *::before, *::after {
-    box-sizing: border-box;
-}
+body { min-height: 100dvh; }
+input, button, textarea, select { font: inherit; }
 
-body {
-    min-height: 100dvh;
-}
+p { text-wrap: pretty; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; }
 
-input, button, textarea, select {
-    font: inherit;
-}
+img, video, svg { height: auto; max-width: 100%; }
 
-p {
-    text-wrap: pretty;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-}
-
-img, video, svg {
-    height: auto;
-    max-width: 100%;
-}
-
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion: reduce)  {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;
         animation-iteration-count: 1 !important;
@@ -39,9 +20,7 @@ img, video, svg {
     }
 }
 
-a {
-    color: inherit;
-}
+a { color: inherit; }
 /* endregion */
 
 :root {
@@ -52,6 +31,7 @@ body {
     font-family: system-ui;
 }
 
+/* region --- MENU --- */
 body > header {
     padding: .5rem;
     height: var(--header-height);
@@ -59,6 +39,48 @@ body > header {
     align-items: center;
     justify-content: space-between;
 }
+
+body > header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 1em;
+}
+
+body > header button[popovertarget] {
+    anchor-name: --menu-usuario;
+}
+
+#menu-usuario {
+    inset: unset;
+    position-anchor: --menu-usuario;
+    top: anchor(bottom);
+    left: anchor(right);
+    margin-top: .3em;
+    position-try-fallbacks: --bottom-left;
+
+    max-width: 20ch;
+    padding: 1em;
+    border: none;
+    border-radius: .2em;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#menu-usuario div:first-child {
+    font-size: .8em;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#menu-usuario div {
+    padding: 0.5em;
+}
+
+@position-try --bottom-left {
+    inset: unset;
+    top: anchor(bottom);
+    right: anchor(right);
+}
+
+/* endregion */
 
 .panel {
     min-width: 300px;
@@ -75,7 +97,7 @@ main {
 }
 
 .panel > h1 {
-    font-size: 1.5em; /* 1 vez y media más grande que el tamaño del padre */
+    font-size: 1.5em;
     margin-bottom: 1em;
 }
 
@@ -91,13 +113,13 @@ main {
 #login > input[type="submit"] {
     width: 150px;
     padding: .5em;
-    align-self: center; /* solo para centrar un elemento flex */
+    align-self: center;
     border-radius: .5em;
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
 }
 
 .panel > a {
-   display: block; /* ocupe todo el espacio disponible */
+    display: block;
     text-align: center;
 }
 
@@ -115,9 +137,12 @@ main {
 }
 
 .contenedor {
-    max-width: 80ch; /* ch, anchura de una letra */
-    margin: 0 auto; /* queda centrado */
+    max-width: 80ch;
+    margin: 0 auto;
 }
-h1 {
-    color: red;
-}
+
+
+
+
+
+
