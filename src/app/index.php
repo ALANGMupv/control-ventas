@@ -1,5 +1,7 @@
 <?php
-if ( empty ($_POST['usuario']) ||  empty ($_POST['password'])) {
+// TODO: Gestionar sesiones y usuarios
+
+/* if ( empty ($_POST['usuario']) ||  empty ($_POST['password'])) {
     header('Location: ../');
 }
 
@@ -28,6 +30,8 @@ if ($result->num_rows == 0) {
 
 $userdata = $result -> fetch_assoc(); // Los datos que me devuelve en un array asociativo
 
+?> */
+
 ?>
 
 <html lang="es">
@@ -42,10 +46,7 @@ $userdata = $result -> fetch_assoc(); // Los datos que me devuelve en un array a
 </head>
 <body>
 
-<header>
-    <img src="https://placehold.co/100x70" alt="Logotipo">
-    <div>Bienvenido <?php echo $userdata ['nombre'] . "" . $userdata['apellidos']; ?></div>
-</header>
+<?php include 'includes/menu.inc'; ?>
 
 <div class="contenedor">
     <?php

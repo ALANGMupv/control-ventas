@@ -52,6 +52,7 @@ body {
     font-family: system-ui;
 }
 
+/* region --- MENU --- */
 body > header {
     padding: .5rem;
     height: var(--header-height);
@@ -59,7 +60,9 @@ body > header {
     align-items: center;
     justify-content: space-between;
 }
+/* endregion */
 
+body
 .panel {
     min-width: 300px;
     border: solid 1px #ccc;
