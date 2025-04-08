@@ -83,11 +83,11 @@ body > header button[popovertarget] {
 /* endregion */
 
 .panel {
-    min-width: 300px;
+    min-width: 400px;
     border: solid 1px #ccc;
     border-radius: .5rem;
     box-shadow: 0 .5rem .5rem #00000063;
-    padding: .5rem;
+    padding: 1rem;
 }
 
 main {
@@ -99,7 +99,11 @@ main {
 .panel > h1 {
     font-size: 1.5em;
     margin-bottom: 1em;
+
 }
+
+/* region --- Login ---- */
+
 
 #login {
     display: flex;
@@ -117,10 +121,90 @@ main {
     border-radius: .5em;
     border: 1px solid #ccc;
 }
+/*endregion*/
+
+/* region --- Formularios ---- */
+
+
+input {
+    padding: .3em .5em;
+    border: none; /* Elimina todos los bordes */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3); /* Solo línea inferior con transparencia */
+    outline: none; /* Evita el contorno azul al enfocar */
+}
+
+input::placeholder{
+    font-style: italic;
+}
+
+input:focus {
+    border-color: #000000;
+}
+
+#labelLogin {
+    color: rgb(74, 110, 210);
+    text-align: center;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    color: white;
+    background-color: rgb(74, 110, 210);
+}
+
+/* Etiqueta de input, no para este proyecto, pero muy usable */
+label {
+    position: relative;
+}
+
+label::before {
+    content: 'Input';
+    position: absolute;
+    left: -2em;
+    top: -1.5em;
+    color: white;
+    background-color: rgb(74, 110, 210);
+    padding: 3px;
+    border-radius: 10px;
+    transform: rotate(-20deg);
+    box-shadow: -1px 6px 10px #0000003b;
+}
+/* ----- */
+
+label:has(+ input[required])::after { /* si este label tiene después un hermano de tipo input de tipo REQUIRED */
+    content: '*';
+    color: red;
+    margin-left: .6ch;
+}
+
+input:user-invalid {
+    border-bottom: 2px solid rgba(255, 13, 13, 0.5); /* rojo translúcido */
+}
+
+input:invalid:focus,
+input:invalid:not(:placeholder-shown) {
+    border-bottom: 2px solid rgba(74, 255, 13, 0.5);
+}
+
+input:focus:invalid {
+    border-bottom: 2px solid rgba(255, 243, 13, 0.5); /* amarillo translúcido */
+}
+
+
+
+/*endregion*/
 
 .panel > a {
     display: block;
-    text-align: center;
+    text-align: right;
+    color: inherit; /* El color por defecto del texto */
+    text-decoration: none; /* Quitamos el subrayado */
+    transition: color 0.3s ease;
+}
+
+.panel > a:hover {
+    color: blue; /* Color azul al pasar el ratón */
+    text-decoration: underline; /* Subrayado como un enlace clásico */
 }
 
 .nota {

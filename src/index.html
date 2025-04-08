@@ -17,13 +17,16 @@
 
 <main>
     <div class="panel">
-        <h1>Login</h1>
+        <h1 id="labelLogin">Login</h1>
         <div id="output"></div>
-        <form id="login" action="app/" method="post">
+        <form id="login" action="app/" method="get">
             <label for="usuario">Nombre/email</label>
-            <input id="usuario" type="text" name="usuario" required>
+            <input id="usuario" type="text" name="usuario"
+                   pattern="[^0-9]+"
+                   required placeholder="direccion@email.com"
+                   title="Introduce un correo electrónico válido">
             <label for="password">Contraseña</label>
-            <input id="password" type="password" name="password" required>
+            <input id="password" type="password" name="password"  placeholder="Tu contraseña porfavor">
 
             <input type="submit" value="Login">
         </form>
