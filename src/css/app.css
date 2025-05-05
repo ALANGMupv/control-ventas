@@ -4,22 +4,23 @@
 
 @media screen and (max-width: 450px) {
     :root {
-        --filtros-width: 0px;
+        --filtros-width: 0;
     }
 }
 
 .dos-columnas {
- border: solid 1px black;
+    border: solid 1px black;
     position: absolute;
     top: var(--header-height);
-    left: 10px; /* a 10 px de la parte izquierda */
-    right: 10px;
-    bottom: 10px;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .filtros {
     background-color: lightgray;
-    top: 0; /* a 10 px de su contenedor */
+    position: absolute;
+    top: 0;
     left: 0;
     bottom: 0;
     width: var(--filtros-width);
@@ -28,8 +29,38 @@
 .contenido {
     background-color: aliceblue;
     position: absolute;
-    top:0;
+    top: 0;
     left: var(--filtros-width);
-    right:0;
-    bottom:0;
+    right: 0;
+    bottom: 0;
+}
+
+form {
+    padding: .5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1ch;
+}
+
+form label {
+    width: 9ch;
+}
+
+form input,
+form select {
+    flex-grow: 1;
+    min-width: 15ch;
+}
+
+form input[type=submit] {
+    min-width: 10ch;
+    max-width: 11ch;
+    margin-inline: auto;
+}
+
+form textarea {
+    width: 100%;
+    field-sizing: content;
+    min-height: 3em;
 }

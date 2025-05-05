@@ -33,3 +33,18 @@ Transacción externa entre un vendedor y un cliente
   "total": 12345678.12
 }
 ```
+
+## Nota
+Contiene información sobre una venta, un cliente o un vendedor.
+```json
+{
+"id": 1,
+"autor": 1,
+"titulo": "Frase que resume el contenido de la nota",
+"contenido": "Texto que contiene la información de la nota",
+"fecha": "2025-04-25",
+"vendedor": 1,
+"cliente": "Nombre",
+"venta": 1
+}
+```
