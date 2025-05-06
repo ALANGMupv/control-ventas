@@ -64,3 +64,78 @@ form textarea {
     field-sizing: content;
     min-height: 3em;
 }
+
+#output {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5em;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+#output::backdrop {
+    background-color: rgba(0, 0, 50, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.mensaje{
+    margin-bottom: 1em;
+}
+
+#output.ok{
+    background-color: rgb(55, 136, 48);
+    color: rgb(200, 238, 194);
+}
+
+#output.error{
+    background-color: rgb(225, 52, 13);
+    color: rgb(200, 238, 194);
+}
+
+/* region --- BOTÓN POPOVER --- */
+#output button {
+    padding-inline: 2em;
+    padding-block: 0.8em;
+    border: none;
+    border-radius: 2em;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+#output button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.4s ease, height 0.4s ease;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+#output button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+#output button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, #4c00c2, #0066ff);
+}
+/*endregion*/

@@ -7,8 +7,20 @@ export async function crearNota(formulario) {
         body: nota
     })
     const datos = await peticion.json();
-    console.log(datos);
-    if(!datos.exito) {
-        console.error("Error al crear nota");
+    //console.log(datos);
+
+    const output = document.getElementById('output');
+    const mensaje = output.querySelector('.mensaje');
+
+    if(datos.error) {
+        //console.error(datos.error);
+        mensaje.textContent = datos.error;
+        output.className = 'error';
+    }else{
+        //console.log(datos.data);
+        mensaje.textContent = `Se creó la nota ${datos.data.titulo}`;
+        output.className = 'ok';
     }
+
+    output.showModal();
 }

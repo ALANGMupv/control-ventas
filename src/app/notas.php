@@ -76,6 +76,11 @@
     </div>
 </div>
 
+<dialog id="output">
+<div class="mensaje"></div>
+    <button onclick="document.getElementById('output').close()">Cerrar</button>
+</dialog>
+
 <script type="module">
     import {crearNota} from '../js/notas.js';
 
